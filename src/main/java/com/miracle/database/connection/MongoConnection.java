@@ -1,5 +1,6 @@
 package com.miracle.database.connection;
 
+import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -36,7 +37,8 @@ public class MongoConnection {
 		System.setProperty("DATABASE", MONGO_DB_NAME);
 		MongoClientOptions.Builder options = MongoClientOptions.builder().sslEnabled(MONGO_DB_SSL)
 				.sslInvalidHostNameAllowed(true);
-		MongoClientURI connectionString = new MongoClientURI(MONGO_DB_URL + MONGO_USERNAME + ":" + MONGO_PASSWORD + "@"
+		String password = new String(Base64.decodeBase64(MONGO_PASSWORD));
+		MongoClientURI connectionString = new MongoClientURI(MONGO_DB_URL + MONGO_USERNAME + ":" + password + "@"
 				+ MONGO_HOST + ":" + MONGO_DB_PORT + "/" + MONGO_CONNECTION_DB_NAME, options);
 		return new MongoClient(connectionString);
 	}
