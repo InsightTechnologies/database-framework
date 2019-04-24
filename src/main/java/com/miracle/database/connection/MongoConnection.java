@@ -37,9 +37,10 @@ public class MongoConnection {
 		System.setProperty("DATABASE", MONGO_DB_NAME);
 		MongoClientOptions.Builder options = MongoClientOptions.builder().sslEnabled(MONGO_DB_SSL)
 				.sslInvalidHostNameAllowed(true);
+		String dbUrl = new String(Base64.decodeBase64(MONGO_DB_URL));
 		String password = new String(Base64.decodeBase64(MONGO_PASSWORD));
-		MongoClientURI connectionString = new MongoClientURI(MONGO_DB_URL + MONGO_USERNAME + ":" + password + "@"
-				+ MONGO_HOST + ":" + MONGO_DB_PORT + "/" + MONGO_CONNECTION_DB_NAME, options);
+		MongoClientURI connectionString = new MongoClientURI(dbUrl + MONGO_USERNAME + ":" + password + "@" + MONGO_HOST
+				+ ":" + MONGO_DB_PORT + "/" + MONGO_CONNECTION_DB_NAME, options);
 		return new MongoClient(connectionString);
 	}
 
