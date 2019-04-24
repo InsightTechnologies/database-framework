@@ -5,7 +5,7 @@ import org.mongojack.Id;
 public class Scrum {
 
 	@Id
-	private int id;
+	private int _id;
 	private String apiEndpoint;
 	private String token;
 
@@ -16,17 +16,17 @@ public class Scrum {
 	}
 
 	/**
-	 * @return the id
+	 * @return the _id
 	 */
-	public int getId() {
-		return id;
+	public int get_id() {
+		return _id;
 	}
 
 	/**
-	 * @param id the id to set
+	 * @param _id the _id to set
 	 */
-	public void setId(int id) {
-		this.id = id;
+	public void set_id(int _id) {
+		this._id = _id;
 	}
 
 	/**

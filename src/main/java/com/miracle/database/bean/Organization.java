@@ -5,31 +5,31 @@ import org.mongojack.Id;
 public class Organization {
 
 	@Id
-	private int id;
+	private int _id;
 	private String orgName;
-	private String orgEmail1;
+	private String orgEmail;
 
 	public Organization() {
 
 	}
 
-	public Organization(String orgName, String orgEmail1) {
+	public Organization(String orgName, String orgEmail) {
 		this.orgName = orgName;
-		this.orgEmail1 = orgEmail1;
+		this.orgEmail = orgEmail;
 	}
 
 	/**
-	 * @return the id
+	 * @return the _id
 	 */
-	public int getId() {
-		return id;
+	public int get_id() {
+		return _id;
 	}
 
 	/**
-	 * @param id the id to set
+	 * @param _id the _id to set
 	 */
-	public void setId(int id) {
-		this.id = id;
+	public void set_id(int _id) {
+		this._id = _id;
 	}
 
 	/**
@@ -47,16 +47,16 @@ public class Organization {
 	}
 
 	/**
-	 * @return the orgEmail1
+	 * @return the orgEmail
 	 */
-	public String getOrgEmail1() {
-		return orgEmail1;
+	public String getOrgEmail() {
+		return orgEmail;
 	}
 
 	/**
-	 * @param orgEmail1 the orgEmail1 to set
+	 * @param orgEmail the orgEmail to set
 	 */
-	public void setOrgEmail1(String orgEmail1) {
-		this.orgEmail1 = orgEmail1;
+	public void setOrgEmail(String orgEmail) {
+		this.orgEmail = orgEmail;
 	}
 }

@@ -82,7 +82,7 @@ public class FilterServiceImpl implements DatabaseService {
 		Set<Object> keys = new HashSet<>();
 
 		while (iterator.hasNext()) {
-			keys.add(iterator.next().getId());
+			keys.add(iterator.next().get_id());
 		}
 		return keys;
 	}

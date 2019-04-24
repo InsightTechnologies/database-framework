@@ -148,7 +148,7 @@ public class DataUtility {
 
 	public Filter loadFilterWithId(int key) {
 		for (Filter filter : getFilterList()) {
-			if (filter.getId() == key) {
+			if (filter.get_id() == key) {
 				return filter;
 			}
 		}
@@ -157,7 +157,7 @@ public class DataUtility {
 
 	public Organization loadOrgWithId(int key) {
 		for (Organization org : getOrganizationList()) {
-			if (org.getId() == key) {
+			if (org.get_id() == key) {
 				return org;
 			}
 		}
@@ -175,7 +175,7 @@ public class DataUtility {
 
 	public Release loadReleaseWithId(int key) {
 		for (Release release : getReleaseList()) {
-			if (release.getId() == key) {
+			if (release.get_id() == key) {
 				return release;
 			}
 		}
@@ -193,7 +193,7 @@ public class DataUtility {
 
 	public Resource loadResourceWithId(int key) {
 		for (Resource resource : getResourceList()) {
-			if (resource.getId() == key) {
+			if (resource.get_id() == key) {
 				return resource;
 			}
 		}
@@ -211,7 +211,7 @@ public class DataUtility {
 
 	public Scrum loadScrumWithId(int key) {
 		for (Scrum scrum : getScrumList()) {
-			if (scrum.getId() == key) {
+			if (scrum.get_id() == key) {
 				return scrum;
 			}
 		}
@@ -229,7 +229,7 @@ public class DataUtility {
 
 	public Sprint loadSprintWithId(int key) {
 		for (Sprint sprint : getSprintList()) {
-			if (sprint.getId() == key) {
+			if (sprint.get_id() == key) {
 				return sprint;
 			}
 		}
@@ -238,7 +238,7 @@ public class DataUtility {
 
 	public Status loadStatusWithId(int key) {
 		for (Status status : getStatusList()) {
-			if (status.getId() == key) {
+			if (status.get_id() == key) {
 				return status;
 			}
 		}
@@ -256,7 +256,7 @@ public class DataUtility {
 
 	public Team loadTeamWithId(int key) {
 		for (Team team : getTeamList()) {
-			if (team.getId() == key) {
+			if (team.get_id() == key) {
 				return team;
 			}
 		}
