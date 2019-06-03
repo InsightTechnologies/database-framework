@@ -49,6 +49,7 @@ public class FilterServiceImpl implements DatabaseService {
 
 	@Override
 	public Object loadAll() {
+		
 		return (List<Filter>) filterCollection.find().into(new ArrayList<Filter>());
 	}
 

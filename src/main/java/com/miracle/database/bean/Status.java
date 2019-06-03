@@ -11,6 +11,10 @@ public class Status {
 	private int statusId;
 	private String statusValue;
 
+	public Status() {
+
+	}
+
 	public Status(String object, String type, int statusId, String statusValue) {
 		super();
 		this.object = object;

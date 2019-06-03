@@ -15,7 +15,6 @@ import org.springframework.stereotype.Service;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.miracle.database.bean.Filter;
 import com.miracle.database.bean.Status;
 import com.mongodb.MongoClient;
 import com.mongodb.client.FindIterable;
@@ -46,7 +45,7 @@ public class StatusServiceImpl implements DatabaseService {
 		FindIterable<Document> findIt = mongoCollection.find(bsonFilter);
 		Document doc = findIt.first();
 		Gson gson = new GsonBuilder().create();
-		return gson.fromJson(doc.toJson(), Filter.class);
+		return gson.fromJson(doc.toJson(), Status.class);
 	}
 
 	@Override

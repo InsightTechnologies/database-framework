@@ -10,6 +10,10 @@ public class Team {
 	private int velocity;
 	private int workingHours;
 
+	public Team() {
+
+	}
+
 	public Team(String teamName, int velocity, int workingHours) {
 		super();
 		this.teamName = teamName;

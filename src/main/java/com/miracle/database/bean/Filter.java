@@ -1,6 +1,6 @@
 package com.miracle.database.bean;
 
-import org.springframework.data.annotation.Id;
+import org.mongojack.Id;
 
 public class Filter {
 

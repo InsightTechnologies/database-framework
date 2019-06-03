@@ -188,7 +188,7 @@ public class DataUtility {
 				return release;
 			}
 		}
-		return null;
+		throw new NullPointerException("Version not available");
 	}
 
 	public Resource loadResourceWithId(int key) {

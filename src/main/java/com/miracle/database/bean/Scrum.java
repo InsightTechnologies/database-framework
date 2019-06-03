@@ -9,6 +9,10 @@ public class Scrum {
 	private String apiEndpoint;
 	private String token;
 
+	public Scrum() {
+
+	}
+
 	public Scrum(String apiEndpoint, String token) {
 		super();
 		this.apiEndpoint = apiEndpoint;

@@ -14,6 +14,7 @@ import com.miracle.database.bean.Resource;
 import com.miracle.database.bean.Scrum;
 import com.miracle.database.bean.Sprint;
 import com.miracle.database.bean.Status;
+import com.miracle.database.bean.Team;
 import com.miracle.utility.DataUtility;
 import com.miracle.utility.DatabaseService;
 
@@ -58,6 +59,7 @@ public class DataConfig implements InitializingBean {
 		commonUtility.setScrumList((List<Scrum>) scrumServiceImpl.loadAll());
 		commonUtility.setSprintList((List<Sprint>) sprintServiceImpl.loadAll());
 		commonUtility.setStatusList((List<Status>) statusServiceImpl.loadAll());
+		commonUtility.setTeamList((List<Team>) teamServiceImpl.loadAll());
 	}
 
 	private void init() {

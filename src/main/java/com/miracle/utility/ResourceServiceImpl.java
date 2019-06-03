@@ -46,7 +46,7 @@ public class ResourceServiceImpl implements DatabaseService {
 		FindIterable<Document> findIt = mongoCollection.find(bsonFilter);
 		Document doc = findIt.first();
 		Gson gson = new GsonBuilder().create();
-		return gson.fromJson(doc.toJson(), Filter.class);
+		return gson.fromJson(doc.toJson(), Resource.class);
 	}
 
 	@Override
