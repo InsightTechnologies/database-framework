@@ -27,7 +27,7 @@ public class MongoConnection {
 	private Environment env;
 
 	@Bean
-	public MongoClient mongo() throws DatabaseException {
+	public MongoClient mongo() {
 		MongoClient mongoClient = null;
 		try {
 			System.setProperty("DATABASE", env.getProperty("mongodb.db"));
@@ -53,11 +53,12 @@ public class MongoConnection {
 			if (texto.contains("Exception")) {
 				throw new DatabaseException(texto);
 			}
-			return mongoClient;
 		} catch (Exception exception) {
-
-			throw new DatabaseException(exception, "Failed to open MongoDB connection");
-
+			exception.printStackTrace();
+//			throw new DatabaseException(exception, "Failed to open MongoDB connection");
+			System.exit(0);
 		}
+		return mongoClient;
+
 	}
 }

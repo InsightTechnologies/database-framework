@@ -1,6 +1,8 @@
 package com.miracle.utility;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
@@ -227,6 +229,20 @@ public class DataUtility {
 		return null;
 	}
 
+	public Map<String, String> getScrumHeaderDetails() {
+		List<Scrum> scrumDetails = getScrumList();
+		Map<String, String> headerDetails = new HashMap<String, String>();
+
+		for (Scrum scrum : scrumDetails) {
+			String[] scrumMetadataDetails = scrum.getToken().split("\\=");
+			if (scrumMetadataDetails.length == 2) {
+				headerDetails.put(scrumMetadataDetails[0], scrumMetadataDetails[1]);
+			}
+		}
+
+		return headerDetails;
+	}
+
 	public Sprint loadSprintWithId(int key) {
 		for (Sprint sprint : getSprintList()) {
 			if (sprint.get_id() == key) {
@@ -271,4 +287,5 @@ public class DataUtility {
 		}
 		return null;
 	}
+
 }
