@@ -190,7 +190,7 @@ public class DataUtility {
 				return release;
 			}
 		}
-		throw new NullPointerException("Version not available");
+		return null;
 	}
 
 	public Resource loadResourceWithId(int key) {
@@ -288,4 +288,7 @@ public class DataUtility {
 		return null;
 	}
 
+	public String getIceScrumURLPrefix() {
+		return getScrumList().get(0).getApiEndpoint();
+	}
 }

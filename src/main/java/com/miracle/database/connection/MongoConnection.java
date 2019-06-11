@@ -33,6 +33,7 @@ public class MongoConnection {
 			System.setProperty("DATABASE", env.getProperty("mongodb.db"));
 			MongoClientOptions.Builder options = MongoClientOptions.builder().sslEnabled(MONGO_DB_SSL)
 					.sslInvalidHostNameAllowed(true);
+			
 			String dbUrl = new String(Base64.decodeBase64(env.getProperty("mongodb.url")));
 
 			MongoClientURI connectionString = new MongoClientURI(
@@ -46,7 +47,7 @@ public class MongoConnection {
 			ByteArrayOutputStream file = new ByteArrayOutputStream();
 			System.setOut(new PrintStream(file));
 
-			Thread.sleep(35000);
+//			Thread.sleep(50000);
 			String texto = new String(file.toByteArray());
 
 			System.setOut(printStream);
